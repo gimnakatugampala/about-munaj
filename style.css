@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --hue-neutral: 200;
+  --hue-wrong: 0;
+  --hue-correct: 145;
+}
+
+#title {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+body {
+  /* --hue: var(--hue-neutral); */
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: hsl(var(--hue), 100%, 20%);
+  background-image: url("/img/photo2.jpg");
+  /* background-color: rgba(255, 0, 0, 0.8); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+body.correct {
+  --hue: var(--hue-correct);
+  background-image: none;
+}
+
+body.wrong {
+  --hue: var(--hue-wrong);
+  background-image: none;
+}
+
+/*container*/
+.container {
+  margin-top: 100px;
+  width: 800px;
+  max-width: 80%;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px 2px;
+}
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 10px;
+  margin: 20px 0;
+}
+
+.btn {
+  --hue: var(--hue-neutral);
+  border: 1px solid hsl(var(--hue), 100%, 30%);
+  background-color: hsl(var(--hue), 100%, 20%);
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #fff;
+  outline: none;
+}
+
+.btn:hover {
+  border-color: black;
+}
+
+.btn.correct {
+  --hue: var(--hue-correct);
+  color: black;
+}
+
+.btn.wrong {
+  --hue: var(--hue-wrong);
+}
+
+.start-btn,
+.next-btn {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hide {
+  display: none;
+}
+
+/*disable btns*/
+.disable {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/*footer*/
+.footer {
+  color: #fff;
+  position: absolute;
+  bottom: 10px;
+}
+
+/*panel*/
+.wrapper {
+  display: none;
+}
+
+#hud {
+  color: #fff;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hud-prefix {
+  text-align: center;
+  font-size: 2rem;
+  padding: 0 20px;
+}
+
+.hud-main-text {
+  text-align: center;
+}
+
+/*Load*/
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid transparent; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+.dom-score {
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
